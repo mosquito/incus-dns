@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "incus-dns"
+version = "0.1.1"
+description = ""
+authors = ["Dmitry Orlov <me@mosquito.su>"]
+readme = "README.md"
+packages = [
+    { include = "incus_dns.py" },
+    { include = "systemd/*" },
+]
+include = ["incus-dns.service"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+aiohttp = "^3.9.5"
+aiomisc = "^17.5.19"
+argclass = "^1.0.3"
+dnslib = "^0.9.24"
+yarl = "^1.9.4"
+rich = "^13.7.1"
+aiochannel = "^1.2.1"
+setuptools = "^70.0.0"
+
+[tool.poetry.scripts]
+incus-dns = "incus_dns:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
